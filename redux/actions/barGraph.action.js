@@ -9,10 +9,11 @@ export const updateGraph = (operation = null) => {
             parseInt(datasets[0].data[1]), 
             parseInt(datasets[0].data[2]), 
             parseInt(datasets[0].data[3]), 
-            parseInt(datasets[0].data[4])
+            parseInt(datasets[0].data[4]),
+            parseInt(datasets[0].data[5])
         ];
 
-        if (currentLabelId && currentNumValue) {
+        if (currentLabelId !== null && currentNumValue !== null) {
             if (operation === 'add') {
                 dataInitialValues[currentLabelId] += currentNumValue;
             } else if (operation === 'subtract') {
