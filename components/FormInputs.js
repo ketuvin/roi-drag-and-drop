@@ -29,7 +29,7 @@ const FormInputs = () => {
 
     return (
         <Flex>
-            <Select bg='black' onChange={handleSelectChange()}>
+            <Select bg='black' placeholder="Select option" onChange={handleSelectChange()}>
                 {labels.map((item, index) => (
                     <option style={{ backgroundColor: 'black' }} key={index} value={index}>{item}</option>
                 ))}
