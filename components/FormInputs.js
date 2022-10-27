@@ -9,7 +9,7 @@ import {
     NumberIncrementStepper,
     NumberDecrementStepper,
 } from '@chakra-ui/react'
-import { setLabel, setNumValue, reset } from "../redux/slices/barGraph.slice";
+import { setLabel, setNumValue } from "../redux/slices/barGraph.slice";
 
 const FormInputs = () => {
     const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const FormInputs = () => {
     const { labels } = barGraphData;
 
     const handleSelectChange = () => (event) => {
+        event.preventDefault();
         console.log(event.target.value);
         dispatch(setLabel(event.target.value));
     };

@@ -5,22 +5,26 @@ import { updateGraph } from '../redux/actions/barGraph.action';
 const Buttons = () => {
     const dispatch = useDispatch();
 
-    const addValues = () => {
+    const addValues = (e) => {
+        e.preventDefault();
         console.log("ADD!");
         dispatch(updateGraph('add'));
     };
 
-    const subtractValues = () => {
+    const subtractValues = (e) => {
+        e.preventDefault();
         console.log("SUBTRACT!");
         dispatch(updateGraph('subtract'));
     };
 
-    const multiplyValues = () => {
+    const multiplyValues = (e) => {
+        e.preventDefault();
         console.log("MULTIPLY!");
         dispatch(updateGraph('multiply'));
     };
 
-    const divideValues = () => {
+    const divideValues = (e) => {
+        e.preventDefault();
         console.log("DIVIDE!");
         dispatch(updateGraph('divide'));
     };
@@ -41,6 +45,6 @@ const Buttons = () => {
             </Button>
         </Stack>
     );
-  };
+};
   
 export default Buttons;

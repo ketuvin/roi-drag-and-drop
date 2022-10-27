@@ -22,7 +22,7 @@ const reorderColumnList = (sourceCol, startIndex, endIndex) => {
     return newColumn;
 };
 
-export default function Layout() {
+const Layout = () => {
     const [state, setState] = useState(initialData);
 
     const onDragEnd = (result) => {
@@ -108,7 +108,9 @@ export default function Layout() {
             </Flex>
         </DragDropContext>
     );
-}
+};
+
+export default Layout;
 
 const initialData = {
   tasks: {
