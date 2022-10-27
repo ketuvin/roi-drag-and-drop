@@ -8,7 +8,10 @@ import FrontendLayout from "../components/frontend/Layout";
 import theme from '../utils/theme';
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, ...rest }) => {
+    const { store, props } = wrapper.useWrappedStore(rest);
+    const { pageProps } = props;
+
     return (
         <ReduxProvider store={store}>
             <ChakraProvider theme={theme}>
@@ -23,4 +26,4 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default wrapper.withRedux(MyApp);
+export default MyApp;
