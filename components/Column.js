@@ -59,6 +59,7 @@ const Column = ({ column, tasks }) => {
                             )}
                         </Draggable>
                     ))}
+                    {droppableProvided.placeholder}
                 </Flex>
             )}
         </Droppable>
