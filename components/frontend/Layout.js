@@ -2,10 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
-import BarGraph from "../BarGraph";
 import Header from "./Header";
-import Buttons from "../Buttons";
-import FormInputs from "../FormInputs";
 
 const Column = dynamic(() => import("../Column"), { ssr: false });
 
@@ -114,9 +111,9 @@ export default Layout;
 
 const initialData = {
   tasks: {
-    1: { id: 1, height: "300px", content:  <BarGraph /> },
-    2: { id: 2, height: "30%", content: <Buttons /> },
-    3: { id: 3, height: "30%", content: <FormInputs /> },
+    1: { id: 1, height: "300px", content: 'bargraph' },
+    2: { id: 2, height: "30%", content: 'buttons' },
+    3: { id: 3, height: "30%", content: 'inputs' },
   },
   columns: {
     "column-1": {

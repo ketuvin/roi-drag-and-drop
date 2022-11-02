@@ -24,7 +24,8 @@ const initialState = {
         borderWidth: 1
     }],
     currentLabelId: null,
-    currentNumValue: null
+    currentNumValue: null,
+    isBarGraphEnabled: false
 };
 
 const barGraphSlice = createSlice({
@@ -37,6 +38,9 @@ const barGraphSlice = createSlice({
         setNumValue: (state, action) => {
             return { ...state, currentNumValue: parseInt(action.payload) };
         },
+        setIsBarGraphEnabled: (state, action) => {
+            return { ...state, isBarGraphEnabled: action.payload };
+        },
         updateDataset: (state, action) => {
             return { ...state, datasets: action.payload };
         },
@@ -48,5 +52,5 @@ const barGraphSlice = createSlice({
     },
 });
 
-export const { setLabel, setNumValue, updateDataset, reset } = barGraphSlice.actions;
+export const { setLabel, setNumValue, setIsBarGraphEnabled, updateDataset, reset } = barGraphSlice.actions;
 export default barGraphSlice;

@@ -2,6 +2,9 @@ import { Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { Droppable } from "react-beautiful-dnd";
+import BarGraph from "./BarGraph";
+import Buttons from "./Buttons";
+import FormInputs from "./FormInputs";
 
 const Column = ({ column, tasks }) => {
   return (
@@ -54,7 +57,9 @@ const Column = ({ column, tasks }) => {
                                     {...draggableProvided.draggableProps}
                                     {...draggableProvided.dragHandleProps}
                                 >
-                                    <Text>{task.content}</Text>
+                                    {task.content == 'bargraph' && <BarGraph isCustomizable={column.title == "LAYOUT" ? true : false}/>}
+                                    {task.content == 'buttons' && <Buttons isCustomizable={column.title == "LAYOUT" ? true : false}/>}
+                                    {task.content == 'inputs' && <FormInputs isCustomizable={column.title == "LAYOUT" ? true : false}/>}
                                 </Flex>
                             )}
                         </Draggable>
